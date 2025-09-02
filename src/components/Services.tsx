@@ -1,6 +1,6 @@
-import { FaBroadcastTower, FaGlobe, FaRegMoon, FaRocket } from "react-icons/fa";
-import { GiSatelliteCommunication } from "react-icons/gi";
-import { MdSatellite } from "react-icons/md";
+// import { FaBroadcastTower, FaGlobe, FaRegMoon, FaRocket } from "react-icons/fa";
+// import { GiSatelliteCommunication } from "react-icons/gi";
+// import { MdSatellite } from "react-icons/md";
 import { Link } from "react-router-dom";
 import wave2 from "../assets/wave2.gif";
 import { motion } from "framer-motion";

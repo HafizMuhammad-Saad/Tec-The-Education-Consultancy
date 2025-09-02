@@ -1,4 +1,4 @@
-import sateliteImg from "../assets/satellite.jpg";
+// import sateliteImg from "../assets/satellite.jpg";
 import videoA from "../assets/footage.mp4"
 import aboutImg from "../assets/abt-img2.png"
 import { motion } from "framer-motion";
