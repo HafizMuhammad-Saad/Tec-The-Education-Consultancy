@@ -11,11 +11,11 @@ const techLogos = [
 ];
 
 // Alternative with image sources
-const imageLogos = [
-  { src: "/src/assets/abt-img2.png", alt: "Company 1", href: "https://company1.com" },
-  { src: "/src/assets/abt-img2.png", alt: "Company 2", href: "https://company2.com" },
-  { src: "/src/assets/abt-img2.png", alt: "Company 3", href: "https://company3.com" },
-];
+// const imageLogos = [
+//   { src: "/src/assets/abt-img2.png", alt: "Company 1", href: "https://company1.com" },
+//   { src: "/src/assets/abt-img2.png", alt: "Company 2", href: "https://company2.com" },
+//   { src: "/src/assets/abt-img2.png", alt: "Company 3", href: "https://company3.com" },
+// ];
 
 const Participatios = () => {
   return (
