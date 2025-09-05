@@ -16,46 +16,57 @@ const Navbar = () => {
     { label: "Contact Us", href: "#contactUs" },
   ];
 
-  return (
+   return (
     <motion.nav
       initial={{ opacity: 0, y: -80 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.3, ease: [0, 0.71, 0.2, 1.01] }}
-      id="navbar"
-      className="fixed top-0 left-0 w-full z-50 flex items-center justify-between bg-white/80 backdrop-blur-md py-3 md:py-4 shadow-md"
+      transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.8, 0.25, 1] }}
+        className="absolute top-10 left-0 w-full z-50 flex items-center justify-between
+             bg-gradient-to-r from-[#a78bfa]/70 to-[#1e3a8a]/70
+             backdrop-blur-xl py-4 md:py-6 px-6 md:px-20 rounded-lg shadow-lg"
     >
       {/* Logo */}
-      <div className="flex items-center ml-6 md:ml-20 cursor-pointer">
-        <img src={logo} alt="Company Logo" className="w-24" />
+      <div className="flex items-center cursor-pointer">
+        <img src={logo} alt="TEC Logo" className="w-36 drop-shadow-lg filter brightness-100" />
       </div>
 
       {/* Desktop Menu */}
-      <div className="hidden md:flex text-gray-800 font-semibold text-lg">
+      <div className="hidden md:flex text-gray-200 font-medium text-lg tracking-wide">
         <ul className="flex gap-x-10">
           {menuItems.map((item) => (
             <li
               key={item.label}
-              className="relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-black after:transition-all after:duration-500 hover:after:w-full"
+              className="relative group"
             >
-              <a href={item.href}>{item.label}</a>
+             <motion.a
+  href={item.href}
+  whileHover={{ y: -3, color: "#22d3ee" }}
+  transition={{ type: "spring", stiffness: 300 }}
+  className="transition-colors"
+>
+  {item.label}
+</motion.a>
+              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-cyan-400 transition-all duration-300 group-hover:w-full"></span>
             </li>
           ))}
         </ul>
       </div>
 
       {/* CTA Button */}
-      <div className="hidden md:flex items-center justify-center mr-6 md:mr-20">
-        <button className="text-gray-800 border-2 px-5 py-2 rounded-md transition hover:bg-gray-800 hover:text-white">
-          Know More
+      <div className="hidden md:flex items-center">
+        <button className="relative px-6 py-2 font-semibold text-gray-100 rounded-md border-2 border-cyan-400 
+                           overflow-hidden transition-all duration-300 hover:text-black group">
+          <span className="absolute inset-0 bg-cyan-400 translate-y-[150%] group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
+          <span className="relative z-10">Know More</span>
         </button>
       </div>
 
       {/* Mobile Hamburger */}
-      <div className="flex md:hidden items-center mr-6">
+      <div className="flex md:hidden items-center">
         <button
           onClick={toggleMenu}
           aria-label="Toggle menu"
-          className="text-gray-800 text-2xl"
+          className="text-gray-200 text-2xl"
         >
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
@@ -64,17 +75,24 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <motion.div
-          initial={{ opacity: 0, x: 80 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -30 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="absolute top-16 right-4 w-[75%] bg-black/90 text-white flex flex-col items-center gap-y-6 py-6 md:hidden rounded-lg shadow-lg backdrop-blur-md"
+          className="absolute top-20 right-4 w-[80%] bg-gradient-to-br from-[#0f172a]/95 to-[#1e3a8a]/95
+                     text-white flex flex-col items-center gap-y-6 py-8 rounded-xl shadow-xl backdrop-blur-xl md:hidden"
         >
           {menuItems.map((item) => (
-            <a key={item.label} href={item.href} onClick={() => setIsOpen(false)}>
+            <a
+              key={item.label}
+              href={item.href}
+              onClick={() => setIsOpen(false)}
+              className="text-lg font-medium tracking-wide hover:text-cyan-400 transition-colors"
+            >
               {item.label}
             </a>
           ))}
-          <button className="text-white border-2 px-5 py-2 rounded-md transition hover:bg-white hover:text-black">
+          <button className="px-6 py-2 text-white border-2 border-cyan-400 rounded-md transition hover:bg-cyan-400 hover:text-black">
             Know More
           </button>
         </motion.div>

@@ -1,10 +1,10 @@
 // import sateliteImg from "../assets/satellite.jpg";
-import videoA from "../assets/footage.mp4"
-import aboutImg from "../assets/abt-img2.png"
+// import videoA from "../assets/footage.mp4"
+// import aboutImg from "../assets/abt-img2.png"
 import { motion } from "framer-motion";
 
 interface DATA {
-  image: string;
+  video: string;
   subTitle: string;
   title: string;
   description: string;
@@ -13,11 +13,11 @@ interface DATA {
 const data: DATA[] = [
   {
     // image: sateliteImg,
-    image: aboutImg,
+    video: 'https://youtu.be/RzVQ7UP8ZFs',
     subTitle: "Our Mission",
-    title: "About Tec",
+    title: "Interactive & Animated Conceptual Learning for All Grades",
     description:
-      "Tec is a dynamic resource center and educational support organization committed to elevating the educational landscape by providing comprehensive solutions for teachers, students, and school management teams. Embracing the ethos of continual learning, our goal is to facilitate academic excellence by offering a diverse range of services and resources. Education is ever learning process and we are still learning, our motto is to strive for academic excellence in the field of education so, Tec team is working hard to cater all the needs or requirements of our education system.",
+      "Welcome to Tec The Education Consultancy, where learning comes to life! We offer *interactive and animated conceptual education* from **Pre-Primary to Higher Secondary**, designed to ignite curiosity and foster a deeper understanding of subjects. Our courses cover a wide range of topics, including **Science, Mathematics, English, Urdu, Islamiyat, and more**.Our *engaging videos* make complex concepts easy to understand and fun to learn! Whether you're a teacher looking for innovative classroom tools or a student seeking extra support, Tec provides the resources to succeed.",
   },
 ];
 
@@ -25,6 +25,15 @@ const data: DATA[] = [
 const Banner = () => {
   return (
     <section className="bg-black text-white py-16">
+      <motion.h2
+          initial={{ opacity: 0, y: -40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="text-3xl md:text-4xl font-bold text-center mb-12"
+        >
+          About <span className="text-blue-400">Section</span>
+        </motion.h2>
       <motion.div
         initial={{ opacity: 0, y: -80 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -43,38 +52,31 @@ const Banner = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <img
+              {/* <img
                 src={items.image}
                 alt={items.title}
                 className="w-full sm:w-[80%] mx-auto max-h-[350px] object-cover rounded-xl shadow-lg"
-              />
-              {/* add video instead of image */}
-              <video
-      autoPlay
-      loop
-      muted
-      className="fixed h-[100%] w-screen left-0 top-0 object-cover -z-10"
-    >
-      <source src={videoA} type="video/mp4" />
-    </video>
+              /> */}
+              <iframe width="100%" height="360" src="https://www.youtube.com/embed/jm338XvZres" title="Tec The Education Consultancy | Interactive &amp; Animated Conceptual Learning for All Grades" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+    {/* <iframe src="https://www.youtube.com/watch?v=jm338XvZres" className="w-full sm:w-[80%] mx-auto max-h-[350px] h-40 object-cover rounded-xl shadow-lg" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> */}
             </motion.div>
 
             {/* TEXT */}
             <div className="space-y-6 xl:pr-36 p-4 border-r-2 border-b-2 border-sky-800/60 rounded-lg">
-              <motion.p
+              {/* <motion.p
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-sky-400 uppercase tracking-wider"
+                className="text-sky-400 tracking-widest uppercase text-lg rotate-90 origin-center"
               >
                 {items.subTitle}
-              </motion.p>
+              </motion.p> */}
 
               <motion.h1
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.6 }}
-                className="uppercase text-3xl sm:text-4xl lg:text-5xl font-bold"
+                className="uppercase text-3xl sm:text-4xl lg:text-xl font-bold"
               >
                 {items.title}
               </motion.h1>

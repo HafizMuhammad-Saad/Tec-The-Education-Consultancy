@@ -22,7 +22,7 @@ const Hero = () => {
               Exploring Beyond Horizons
             </motion.h1> */}
             <TextType 
-  text={["Tec - The Tec Eduction Consultancy", "for your children", "Develope Your Child!"]}
+  text={["Tec - The Eduction Consultancy", "for your children", "Develope Your Child!"]}
   typingSpeed={75}
   pauseDuration={1500}
   showCursor={true}
@@ -31,7 +31,7 @@ const Hero = () => {
 />
 
 <TextType 
-  text={["Discover the cutting-edge innovations in satellite technology. Unlock the mysteries of distant galaxies and celestial bodies.Empowering communication and navigation worldwide. Pioneering thefuture of space exploration and discovery."]}
+  text={["Tec is a dynamic resource center and educational support organization committed to elevating the educational landscape by providing comprehensive solutions for teachers, students, and school management teams. Embracing the ethos of continual learning, our goal is to facilitate academic excellence by offering a diverse range of services and resources."]}
   typingSpeed={10}
   pauseDuration={1500}
   showCursor={true}
@@ -58,12 +58,13 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.5, ease: [0, 0.71, 0.2, 1.01] }}
               className="flex gap-4"
             >
-              <button className="py-3 px-6 rounded-md mt-5 font-medium text-md bg-blue-600 hover:bg-blue-500 transition-all duration-300 hover:scale-105 shadow-lg">
-                Learn More
-              </button>
-              <button className="py-3 px-6 rounded-md mt-5 font-medium text-md bg-white/20 hover:bg-white/30 transition-all duration-300 hover:scale-105 shadow-lg">
-                Contact Us
-              </button>
+             <div className="hidden md:flex items-center">
+        <button className="relative px-6 py-2 font-semibold text-gray-100 rounded-md border-2 border-cyan-400 
+                           overflow-hidden transition-all duration-300 hover:text-black group">
+          <span className="absolute inset-0 bg-cyan-400 translate-y-[150%] group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
+          <span className="relative z-10">Know More</span>
+        </button>
+      </div>
             </motion.div>
           </div>
 

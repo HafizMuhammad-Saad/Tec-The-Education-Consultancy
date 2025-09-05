@@ -4,7 +4,7 @@
 import { Link } from "react-router-dom";
 import wave2 from "../assets/wave2.gif";
 import { motion } from "framer-motion";
-
+// import TiltedCard from "../TiltedCard";
 export interface SERVICE {
   title: string;
   link: string;
@@ -76,11 +76,80 @@ const itemVariants = {
   hidden: { opacity: 0, y: 50 },
   show: { opacity: 1, y: 0 },
 };
+// import ChromaGrid from '../../reactBits/ChromaGrid/ChromaGrid'
+
+// const items = [
+//   {
+//     image: "https://tec.edu.pk/pk/wp-content/uploads/2025/02/pub.png",
+//     title: "Sarah Johnson",
+//     subtitle: "Frontend Developer",
+//     handle: "@sarahjohnson",
+//     borderColor: "#3B82F6",
+//     gradient: "linear-gradient(145deg, #3B82F6, #000)",
+//     url: "https://github.com/sarahjohnson"
+//   },
+//   {
+//     image: "https://tec.edu.pk/pk/wp-content/uploads/2025/02/sms2.png",
+//     title: "Mike Chen",
+//     subtitle: "Backend Engineer",
+//     handle: "@mikechen",
+//     borderColor: "#10B981",
+//     gradient: "linear-gradient(180deg, #10B981, #000)",
+//     url: "https://linkedin.com/in/mikechen"
+//   },
+//   {
+//     image: "https://tec.edu.pk/pk/wp-content/uploads/2025/02/Computer-Based-Testing2.png",
+//     title: "Sarah Johnson",
+//     subtitle: "Frontend Developer",
+//     handle: "@sarahjohnson",
+//     borderColor: "#3B82F6",
+//     gradient: "linear-gradient(145deg, #3B82F6, #000)",
+//     url: "https://github.com/sarahjohnson"
+//   },
+//   {
+//     image: "https://tec.edu.pk/pk/wp-content/uploads/2025/02/lms1.png",
+//     title: "Mike Chen",
+//     subtitle: "Backend Engineer",
+//     handle: "@mikechen",
+//     borderColor: "#10B981",
+//     gradient: "linear-gradient(180deg, #10B981, #000)",
+//     url: "https://linkedin.com/in/mikechen"
+//   },
+//   {
+//     image: "https://i.pravatar.cc/300?img=1",
+//     title: "Sarah Johnson",
+//     subtitle: "Frontend Developer",
+//     handle: "@sarahjohnson",
+//     borderColor: "#3B82F6",
+//     gradient: "linear-gradient(145deg, #3B82F6, #000)",
+//     url: "https://github.com/sarahjohnson"
+//   },
+//   {
+//     image: "https://i.pravatar.cc/300?img=2",
+//     title: "Mike Chen",
+//     subtitle: "Backend Engineer",
+//     handle: "@mikechen",
+//     borderColor: "#10B981",
+//     gradient: "linear-gradient(180deg, #10B981, #000)",
+//     url: "https://linkedin.com/in/mikechen"
+//   },
+
+// ];
+
 
 const Services = () => {
   return (
     <div className="pt-4 pb-10 p-8 text-white bg-black relative z-50">
       <div className="min-h-[400px]">
+        <motion.h2
+                  initial={{ opacity: 0, y: -40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, ease: "easeOut" }}
+                  viewport={{ once: true }}
+                  className="text-3xl md:text-4xl font-bold text-center mb-12"
+                >
+                  Our <span className="text-blue-400">Services</span>
+                </motion.h2>
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-7 relative mt-10 z-10"
           variants={containerVariants}
@@ -94,30 +163,37 @@ const Services = () => {
   variants={itemVariants}
   className="flex flex-col items-center gap-4 bg-sky-900/60 p-6 rounded-md w-full hover:shadow-lg hover:shadow-sky-500/20 transition duration-300"
 >
+
+  
   <Link
     to={services.link}
     className="flex flex-col items-center gap-4 hover:scale-105 transition-transform duration-300 w-full"
   >
-    {/* Bigger, consistent image */}
     <img
       src={services.image}
       alt={services.title}
       className="w-40 h-40 md:w-52 md:h-52 object-contain"
     />
 
-    {/* Title */}
     <h1 className="text-lg md:text-xl font-semibold text-center">
       {services.title}
     </h1>
 
-    {/* Description */}
-    {/* <p className="text-sm text-center text-gray-300 leading-relaxed">
-      {services.description}
-    </p> */}
+    
   </Link>
 </motion.div>
 
           ))}
+
+          {/* <div style={{ height: '800px', position: 'relative' }}>
+  <ChromaGrid 
+    items={items}
+    radius={300}
+    damping={0.45}
+    fadeOut={0.6}
+    ease="power3.out"
+  />
+</div> */}
         </motion.div>
 
         <img

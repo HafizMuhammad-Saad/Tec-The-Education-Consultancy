@@ -11,10 +11,10 @@ interface DATA {
 const data: DATA[] = [
   {
     image: sateliteImg,
-    subTitle: "Our Mission",
-    title: "Rapidscat",
+    subTitle: "Tec Solutions",
+    title: "Tec - The Education Consultancy ",
     description:
-      "RapidScat is a satellite instrument designed to measure ocean surface wind speeds and directions. It helps improve weather forecasting, storm tracking, and climate modeling by providing valuable wind data.",
+      "Tec The Education Consultancy is a Resources Organization for teachers and students offering services of E-Learning, LMS (Learning Management System), CBTS, Animated Tutorials, Online Classes, Academic Coordination for students & educational organizations",
   },
 ];
 
@@ -42,14 +42,14 @@ const Banner2 = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="space-y-6 xl:pr-36 p-4 border-l-2 border-b-2 border-l-sky-800 border-b-sky-800 pl-10"
             >
-              <motion.p
+              {/* <motion.p
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
                 className="text-sky-800 uppercase"
               >
                 {items.subTitle}
-              </motion.p>
+              </motion.p> */}
               <motion.h1
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -81,11 +81,12 @@ const Banner2 = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              <img
+              {/* <img
                 src={items.image}
                 alt={items.title}
                 className="w-full sm:w-[80%] mx-auto max-h-[350px] object-cover rounded-lg"
-              />
+              /> */}
+<iframe width="100%" height="300" src="https://www.youtube.com/embed/Wip04wNC27s" title="Tec The Education Consultancy" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
             </motion.div>
           </div>
         ))}
