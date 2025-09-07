@@ -3,12 +3,12 @@ import TextType from "../../reactBits/TextType/TextType";
 const Hero = () => {
   return (
     <>
-      <section className="relative text-white h-screen flex items-center">
+      <section className="relative text-white h-screen flex items-center pt-20">
         <div className="container grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Right Column (optional image/graphic) */}
           <div className="hidden md:flex items-center justify-center">
             {/* Placeholder for illustration or animation */}
-            {/* <img src="https://tec.edu.pk/pk/wp-content/uploads/2025/02/events1.png" alt="" className="rounded-3xl"/> */}
+            {/* <img src="/src/assets/maintenance cyber security.gif" alt="" className="rounded-3xl text-9xl"/> */}
           </div>
           {/* Left Content */}
            <div className="flex flex-col items-start justify-center ml-5 md:ml-10 bg-black/30 p-5 rounded-lg md:bg-transparent md:p-0">
@@ -27,7 +27,7 @@ const Hero = () => {
   pauseDuration={1500}
   showCursor={true}
   cursorCharacter="|"
-  className="text-4xl md:text-6xl font-bold leading-tight drop-shadow-lg"
+  className="text-4xl md:text-6xl font-bold leading-tight drop-shadow-lg font-TimesNewRoman"
 />
 
 <TextType 
@@ -58,7 +58,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.5, ease: [0, 0.71, 0.2, 1.01] }}
               className="flex gap-4"
             >
-             <div className="hidden md:flex items-center">
+             <div className="hidden md:flex items-center mt-3">
         <button className="relative px-6 py-2 font-semibold text-gray-100 rounded-md border-2 border-cyan-400 
                            overflow-hidden transition-all duration-300 hover:text-black group">
           <span className="absolute inset-0 bg-cyan-400 translate-y-[150%] group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>

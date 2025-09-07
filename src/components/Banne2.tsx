@@ -54,17 +54,17 @@ const Banner2 = () => {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.7 }}
-                className="uppercase text-5xl"
+                className="uppercase text-3xl sm:text-4xl lg:text-4xl"
               >
                 {items.title}
               </motion.h1>
-              <motion.p
+              {/* <motion.p
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.9 }}
               >
                 {items.description}
-              </motion.p>
+              </motion.p> */}
               <motion.div
                 initial={{ opacity: 0, x: -100 }}
                 whileInView={{ opacity: 1, x: 0 }}

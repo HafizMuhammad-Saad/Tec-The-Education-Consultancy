@@ -23,7 +23,7 @@ const Navbar = () => {
       transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.8, 0.25, 1] }}
         className="absolute top-10 left-0 w-full z-50 flex items-center justify-between
              bg-gradient-to-r from-[#a78bfa]/70 to-[#1e3a8a]/70
-             backdrop-blur-xl py-4 md:py-6 px-6 md:px-20 rounded-lg shadow-lg"
+             backdrop-blur-xl py-2 md:py-4 px-6 md:px-20 rounded-lg shadow-lg"
     >
       {/* Logo */}
       <div className="flex items-center cursor-pointer">

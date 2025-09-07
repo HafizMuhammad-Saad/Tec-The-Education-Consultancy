@@ -76,19 +76,19 @@ const Banner = () => {
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.6 }}
-                className="uppercase text-3xl sm:text-4xl lg:text-xl font-bold"
+                className="uppercase text-3xl sm:text-4xl lg:text-4xl"
               >
                 {items.title}
               </motion.h1>
 
-              <motion.p
+              {/* <motion.p
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.8 }}
                 className="text-gray-300 leading-relaxed max-w-prose"
               >
                 {items.description}
-              </motion.p>
+              </motion.p> */}
 
               <motion.div
                 initial={{ opacity: 0, x: -80 }}

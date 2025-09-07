@@ -11,6 +11,9 @@ export default {
           sm: "2rem",
         },
       },
+      fontFamily: {
+        TimesNewRoman: ["'Times New Roman'", "serif"],
+      },
     },
   },
   plugins: [scroolBar],
