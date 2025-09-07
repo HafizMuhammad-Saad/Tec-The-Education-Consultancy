@@ -1,5 +1,4 @@
 import {
-  LiaInstagram,
   LiaFacebook,
 
   LiaTwitter,
