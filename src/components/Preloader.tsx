@@ -42,9 +42,9 @@ useEffect(() => {
     className="w-72 md:w-80 drop-shadow-[0_0_35px_rgba(0,247,255,1)]"
   />
 
-  <p id="tagline" className="mt-6 text-xl font-semibold text-cyan-300 tracking-wider">
+  {/* <p id="tagline" className="mt-6 text-xl font-semibold text-cyan-300 tracking-wider">
   Shaping Futures with TEC
-</p>
+</p> */}
 </div>
   );
 };

@@ -16,7 +16,6 @@ import { BrowserRouter as Router  } from "react-router-dom";
 import NewsEvents from "./components/NewsEvents";
 // import Participatios from "./components/Participatios";
 // import VerticalMarquee from "./components/VerticalMarquee";
-import BrickCarousel from "./components/BrickCarousel";
 
 function App() {
 

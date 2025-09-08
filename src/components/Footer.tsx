@@ -7,6 +7,14 @@ import {
 import { motion } from "framer-motion";
 import { BiMap } from "react-icons/bi";
 
+const menuItems = [
+    { label: "About Us", href: "#aboutus" },
+    { label: "Our Network", href: "#ournetwork" },
+    { label: "Gallery", href: "#gallery" },
+    { label: "Home Schooling", href: "#homeschooling" },
+    { label: "Contact Us", href: "#contactUs" },
+  ];
+
 const Footer = () => {
   return (
     <footer className="relative bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#0f172a] text-gray-300">
@@ -34,13 +42,13 @@ const Footer = () => {
       <div>
         <h3 className="text-lg font-semibold text-white mb-2">Important Links</h3>
         <ul className="space-y-2">
-          {["Home", "About", "Services", "Contact"].map((link) => (
-            <li key={link} className="inline-block  mr-4">
+          {menuItems.map((link) => (
+            <li key={link.label} className="inline-block  mr-4">
               <a
                 href={`#${link}`}
                 className="hover:text-cyan-400 transition-colors"
               >
-                {link}
+                {link.label}{' |'}
               </a>
             </li>
           ))}

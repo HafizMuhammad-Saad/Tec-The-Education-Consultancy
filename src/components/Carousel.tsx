@@ -1,9 +1,9 @@
 // import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+// import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+// import Slider from "react-slick";
 
 // import { Swiper, SwiperSlide } from "swiper/react";
 // import {
@@ -21,7 +21,8 @@ import Slider from "react-slick";
 // import "swiper/css/effect-coverflow";
 // import "swiper/css/effect-cards";
 // import "swiper/css/pagination";
-
+        import { AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 
 
 const images = [
@@ -37,46 +38,91 @@ const images = [
 
 const Carousel = () => {
 
-    const NextArrow = ({ onClick }: any) => (
-  <button
-    onClick={onClick}
-    className="absolute top-1/2 -right-3 transform -translate-y-1/2 z-50 bg-blue-300/50 p-3 rounded-full text-white hover:bg-black/80 transition"
-  >
-    <FaChevronRight />
-  </button>
-);
+//     const NextArrow = ({ onClick }: any) => (
+//   <button
+//     onClick={onClick}
+//     className="absolute top-1/2 -right-3 transform -translate-y-1/2 z-50 bg-blue-300/50 p-3 rounded-full text-white hover:bg-black/80 transition"
+//   >
+//     <FaChevronRight />
+//   </button>
+// );
 
-const PrevArrow = ({ onClick }: any) => (
-  <button
-    onClick={onClick}
-    className="absolute top-1/2 -left-3 transform -translate-y-1/2 z-50 bg-blue-300/50 p-3 rounded-full text-white hover:bg-black/80 transition"
-  >
-    <FaChevronLeft />
-  </button>
-);
-      const settings = {
-    dots: true,
-    infinite: true,
-    slidesToShow: 3,
-    fade: true,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 1500,
-    autoplaySpeed: 1500,
-    cssEase: "ease",
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    responsive: [
-      {
-        breakpoint: 1024, // tablets
-        settings: { slidesToShow: 2 },
-      },
-      {
-        breakpoint: 640, // mobile
-        settings: { slidesToShow: 1 },
-      },
-    ],
+// const PrevArrow = ({ onClick }: any) => (
+//   <button
+//     onClick={onClick}
+//     className="absolute top-1/2 -left-3 transform -translate-y-1/2 z-50 bg-blue-300/50 p-3 rounded-full text-white hover:bg-black/80 transition"
+//   >
+//     <FaChevronLeft />
+//   </button>
+// );
+  //     const settings = {
+  //   dots: true,
+  //   infinite: true,
+  //   slidesToShow: 3,
+  //   fade: true,
+  //   slidesToScroll: 1,
+  //   autoplay: true,
+  //   speed: 1500,
+  //   autoplaySpeed: 1500,
+  //   cssEase: "ease",
+  //   nextArrow: <NextArrow />,
+  //   prevArrow: <PrevArrow />,
+  //   responsive: [
+  //     {
+  //       breakpoint: 1024, // tablets
+  //       settings: { slidesToShow: 2 },
+  //     },
+  //     {
+  //       breakpoint: 640, // mobile
+  //       settings: { slidesToShow: 1 },
+  //     },
+  //   ],
+  // };
+
+
+
+const effects = [
+  "fade", 
+  "flip", 
+  "zoom", 
+  "pageTurn", 
+  "blast", 
+  "rotate", 
+  "slideUp", 
+  "bricks", 
+  "tilted", 
+];
+  const [index, setIndex] = useState(0);
+
+  const [effect, setEffect] = useState("zoom");
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setEffect(effects[Math.floor(Math.random() * effects.length)]);
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+    // 🔹 Standard single-image variants
+  const variants: any = {
+    fade: { opacity: 0 },
+    flip: { rotateY: 90, opacity: 0 },
+    zoom: { scale: 0, opacity: 0 },
+    pageTurn: { x: "100%", rotateY: -90, opacity: 0 },
+    blast: { scale: 2, opacity: 0, rotate: 180 },
+    rotate: { rotate: 360, opacity: 0 },
+    slideUp: { y: 200, opacity: 0 },
+    tilted: { 
+  x: 200, 
+  y: -100, 
+  rotate: -15, 
+  opacity: 0 
+},
+
+
   };
+const target = { opacity: 1, scale: 1, rotate: 0, rotateY: 0, x: 0, y: 0 };
 
   
 
@@ -97,7 +143,7 @@ const PrevArrow = ({ onClick }: any) => (
           Tec <span className="text-blue-400">Media</span>
         </motion.h2>
        
-            <div className="slider-container">
+            {/* <div className="slider-container">
                 <Slider {...settings}>
           {images.map((img, index) => (
 <div key={index} className="px-2">
@@ -113,25 +159,23 @@ const PrevArrow = ({ onClick }: any) => (
       
         ))}
         </Slider>
-        </div>
+        </div> */}
 
-         {/* <Swiper
-          modules={[EffectFade, EffectFlip, EffectCoverflow, Pagination]}
-          effect="fade"
-          pagination={{ clickable: true }}
-         onSlideChange={(swiper) => {
-    const effects = ["fade", "flip", "coverflow"];
-    swiper.params.effect = effects[swiper.realIndex % effects.length];
-    swiper.init(); // re-init to apply
-  }}
-          className="w-full h-[500px]"
-        >
-          {images.map((img, index) => (
-            <SwiperSlide key={index} className="flex items-center justify-center">
-              <img src={img} alt={`slide-${index}`} className="rounded-lg shadow-lg" />
-            </SwiperSlide>
-          ))}
-        </Swiper> */}
+
+    <div className="relative w-full h-[500px] overflow-hidden">
+      <AnimatePresence mode="wait">
+        <motion.img
+          key={index}
+          src={images[index]}
+          initial={variants[effect]}
+          animate={target}
+          exit={variants[effect]}
+          transition={{ duration: 1 }}
+          className="absolute w-full h-auto object-contain rounded-lg shadow-lg"
+        />
+      </AnimatePresence>
+    </div>
+
        
       </div>
     </section>

@@ -12,7 +12,7 @@ const TopNav = () => {
           initial={{ x: "100%" }}
           animate={{ x: "-100%" }}
           transition={{
-            duration: 16,
+            duration: 28,
             repeat: Infinity,
             ease: "linear",
           }}
