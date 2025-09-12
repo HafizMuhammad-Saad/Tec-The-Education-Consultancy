@@ -1,3 +1,4 @@
+import TextType from "../../reactBits/TextType/TextType";
 import sateliteImg from "../assets/satellite3.jpg";
 import { motion } from "framer-motion";
 
@@ -56,7 +57,14 @@ const Banner2 = () => {
                 transition={{ duration: 0.8, delay: 0.7 }}
                 className="uppercase text-3xl sm:text-4xl lg:text-4xl"
               >
-                {items.title}
+                 <TextType 
+  text={[items.title]}
+  typingSpeed={75}
+  pauseDuration={1500}
+  showCursor={true}
+  cursorCharacter="|"
+  className=""
+/>
               </motion.h1>
               {/* <motion.p
                 initial={{ opacity: 0, y: 50 }}

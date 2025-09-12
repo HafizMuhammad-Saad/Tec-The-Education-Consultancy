@@ -14,9 +14,11 @@ import Video from "./components/Video";
 import { BrowserRouter as Router  } from "react-router-dom";
 // import TiltedCard from "./TiltedCard";
 import NewsEvents from "./components/NewsEvents";
+// import LogoLoop from "../reactBits/LogoLoop/LogoLoop";
+import LogoSlider from "./components/LogoSlider";
+// import CardNav from "../reactBits/CardNav/CardNav";
 // import Participatios from "./components/Participatios";
 // import VerticalMarquee from "./components/VerticalMarquee";
-
 function App() {
 
   const [loading, setLoading] = useState(true);
@@ -48,15 +50,21 @@ function App() {
           <Video />
         </div>
         <TopNav />
-        <Navbar />
+        <Navbar />    
         <Hero />
         <Services />
-        {/* <Participatios /> */}
-        {/* <BrickCarousel /> */}
-        <Carousel />
+       <LogoSlider />
         <Banner />
         <Banner2 />
+        <div className="w-full bg-black">
+  <img 
+    src="/src/assets/map.jpg" 
+    alt="map" 
+    className="w-full object-contain h-[70vh] "
+  />
+</div>
         <NewsEvents />
+        <Carousel />
         <Footer />
       </div>
 

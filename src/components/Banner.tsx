@@ -2,6 +2,7 @@
 // import videoA from "../assets/footage.mp4"
 // import aboutImg from "../assets/abt-img2.png"
 import { motion } from "framer-motion";
+import TextType from "../../reactBits/TextType/TextType";
 
 interface DATA {
   video: string;
@@ -32,7 +33,7 @@ const Banner = () => {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-bold text-center mb-12"
         >
-          About <span className="text-blue-400">Section</span>
+          About <span className="text-blue-400">Us</span>
         </motion.h2>
       <motion.div
         initial={{ opacity: 0, y: -80 }}
@@ -78,7 +79,14 @@ const Banner = () => {
                 transition={{ duration: 0.7, delay: 0.6 }}
                 className="uppercase text-3xl sm:text-4xl lg:text-4xl"
               >
-                {items.title}
+                <TextType
+  text={[items.title]}
+  typingSpeed={75}
+  pauseDuration={1500}
+  showCursor={true}
+  cursorCharacter="|"
+  className=""
+/>
               </motion.h1>
 
               {/* <motion.p

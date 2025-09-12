@@ -4,6 +4,7 @@
 import { Link } from "react-router-dom";
 import wave2 from "../assets/wave2.gif";
 import { motion } from "framer-motion";
+
 // import TiltedCard from "../TiltedCard";
 export interface SERVICE {
   title: string;
@@ -76,6 +77,7 @@ const itemVariants = {
   hidden: { opacity: 0, y: 50 },
   show: { opacity: 1, y: 0 },
 };
+
 // import ChromaGrid from '../../reactBits/ChromaGrid/ChromaGrid'
 
 // const items = [
@@ -161,10 +163,9 @@ const Services = () => {
            <motion.div
   key={index}
   variants={itemVariants}
-  className="flex flex-col items-center gap-4 bg-sky-900/60 p-6 rounded-md w-full hover:shadow-lg hover:shadow-sky-500/20 transition duration-300"
+  className="flex flex-col items-center gap-4 bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#0f172a] p-6 rounded-md w-full hover:shadow-lg hover:shadow-sky-500/20 transition duration-300"
 >
 
-  
   <Link
     to={services.link}
     className="flex flex-col items-center gap-4 hover:scale-105 transition-transform duration-300 w-full"
@@ -201,7 +202,9 @@ const Services = () => {
           alt="wave"
           className="hidden md:flex md:h-[300px] w-full object-cover mix-blend-screen translate-y-3 relative z-[0]"
         />
+       
       </div>
+
     </div>
   );
 };

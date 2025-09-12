@@ -140,7 +140,7 @@ const target = { opacity: 1, scale: 1, rotate: 0, rotateY: 0, x: 0, y: 0 };
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-bold text-center text-white mb-12"
         >
-          Tec <span className="text-blue-400">Media</span>
+          Tec <span className="text-blue-400">Gallery</span>
         </motion.h2>
        
             {/* <div className="slider-container">

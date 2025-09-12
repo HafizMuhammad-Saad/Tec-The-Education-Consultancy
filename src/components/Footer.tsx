@@ -33,7 +33,7 @@ const Footer = () => {
       </div>
 
       <p className="text-sm text-gray-500">
-        © {new Date().getFullYear()} <span className="text-cyan-400 font-semibold">TEC</span>. All Rights Reserved.
+        © {new Date().getFullYear()} <span className="text-cyan-400 font-semibold font-TimesNewRoman">Tec</span>. All Rights Reserved.
       </p>
     </div>
 
