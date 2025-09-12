@@ -19,6 +19,7 @@ import LogoSlider from "./components/LogoSlider";
 // import CardNav from "../reactBits/CardNav/CardNav";
 // import Participatios from "./components/Participatios";
 // import VerticalMarquee from "./components/VerticalMarquee";
+import mapImage from "./assets/map.jpg";
 function App() {
 
   const [loading, setLoading] = useState(true);
@@ -57,7 +58,7 @@ function App() {
         <Services />
         <div className="w-full bg-black">
   <img 
-    src="/src/assets/map.jpg" 
+    src={mapImage}
     alt="map" 
     className="w-full object-contain h-[70vh] "
   />
