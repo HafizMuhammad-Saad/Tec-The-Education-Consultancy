@@ -21,7 +21,7 @@ const ServiceData: SERVICE[] = [
     link: "/",
     description: "Used for observations, capturing stunning images of the universe.",
     // icon: <FaRocket />,
-    image: "/src/assets/browser.gif",
+    image: "/assets/browser.gif",
     aosDelay: "300",
   },
   {
@@ -29,7 +29,7 @@ const ServiceData: SERVICE[] = [
     link: "35,786km",
     description: "Orbits Earth to provide constant communication and weather monitoring.",
     // icon: <MdSatellite />,
-        image: "/src/assets/AnimatedDashboards.gif",
+        image: "/assets/AnimatedDashboards.gif",
 
     aosDelay: "400",
   },
@@ -38,7 +38,7 @@ const ServiceData: SERVICE[] = [
     link: "20,200km",
     description: "Enables GPS technology for accurate positioning and navigation worldwide.",
 
-    image: "/src/assets/dashboard.gif",
+    image: "/assets/dashboard.gif",
     // icon: <FaGlobe />,
     aosDelay: "500",
   },
@@ -46,7 +46,7 @@ const ServiceData: SERVICE[] = [
     title: "School Management System",
     link: "8,000-36,000km",
 
-    image: "/src/assets/Educatin.gif",
+    image: "/assets/Educatin.gif",
     description: "Facilitates television, internet, and radio broadcasting across the globe.",
     // icon: <FaBroadcastTower />,
     aosDelay: "600",
@@ -55,7 +55,7 @@ const ServiceData: SERVICE[] = [
     title: "Publications",
     link: "384,400km",
 
-    image: "/src/assets/publications.gif",
+    image: "/assets/publications.gif",
     description: "Monitors the lunar surface and assists with space exploration efforts.",
     // icon: <FaRegMoon />,
     aosDelay: "700",
