@@ -25,16 +25,55 @@ const data: DATA[] = [
 
 const Banner = () => {
   return (
-    <section className="bg-black text-white py-16">
+    <section className="bg-black text-white py-16" >
       <motion.h2
-          initial={{ opacity: 0, y: -40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold text-center mb-12"
-        >
-          About <span className="text-blue-400">Us</span>
-        </motion.h2>
+  initial={{ opacity: 0, y: -40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.7, ease: "easeOut" }}
+  viewport={{ once: true }}
+  style={{
+    // position: 'relative',
+    fontSize: '2.5rem',
+    fontWeight: 800,
+    textAlign: 'center',
+    marginBottom: '3rem',
+    // fontFamily: `'Playfair Display', serif`,
+    textTransform: 'uppercase',
+background: 'linear-gradient(to bottom, #e0e0e0 0%, #b0b0b0 35%, #a0a0a0 50%, #dcdcdc 70%, #8a8a8a 100%)',
+    backgroundPosition: '0 1vw',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    color: '#fff',
+    // display: 'inline-block',
+  }}
+>
+  About Us
+  <span
+    aria-hidden="true"
+    style={{
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      zIndex: -1,
+      display: 'block',
+      color: '#b3b3b3',
+      textShadow: `
+        -1px 0 1px #b3b3b3,
+        0 1px 1px #b3b3b3,
+        5px 5px 10px rgba(0, 0, 0, 0.4),
+        -5px -5px 10px rgba(0, 0, 0, 0.4)
+      `,
+      fontSize: '2.5rem',
+      fontWeight: 400,
+      fontFamily: `'Playfair Display', serif`,
+      textTransform: 'uppercase',
+      pointerEvents: 'none',
+    }}
+  >
+    About Us
+  </span>
+</motion.h2>
+
       <motion.div
         initial={{ opacity: 0, y: -80 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -85,7 +124,7 @@ const Banner = () => {
   pauseDuration={1500}
   showCursor={true}
   cursorCharacter="|"
-  className=""
+  className="font-bold leading-tight drop-shadow-lg"
 />
               </motion.h1>
 

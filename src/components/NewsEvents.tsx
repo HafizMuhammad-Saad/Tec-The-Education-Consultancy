@@ -29,15 +29,36 @@ const NewsEvents = () => {
     >
       <div className="container mx-auto px-6 lg:px-20">
         {/* Heading */}
-        <motion.h2
-          initial={{ opacity: 0, y: -40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold text-center mb-12"
-        >
-          Latest <span className="text-blue-400">News & Events</span>
-        </motion.h2>
+       <motion.h2
+  initial={{ opacity: 0, y: -40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.7, ease: "easeOut" }}
+  viewport={{ once: true }}
+  style={{
+    fontSize: '2.5rem', // Adjust if needed for responsiveness
+    fontWeight: 800,
+    textAlign: 'center',
+    marginBottom: '3rem',
+    color: '#ccc',
+    textShadow: `
+      1px 1px 0 #999,
+      2px 2px 1px #666,
+      3px 3px 2px #333
+    `
+  }}
+>
+  <span
+    style={{
+      background: 'linear-gradient(135deg, #d9d9d9, #aaaaaa, #f1f1f1, #888888)',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      display: 'inline-block'
+    }}
+  >
+    Latest News & Events
+  </span>
+</motion.h2>
+
 
         {/* Grid of Cards */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">

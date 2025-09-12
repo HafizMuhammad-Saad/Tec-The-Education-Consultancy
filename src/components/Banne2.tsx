@@ -13,7 +13,7 @@ const data: DATA[] = [
   {
     image: sateliteImg,
     subTitle: "Tec Solutions",
-    title: "Tec - The Education Consultancy ",
+    title: "Introduced a virtual and conceptual learning software ",
     description:
       "Tec The Education Consultancy is a Resources Organization for teachers and students offering services of E-Learning, LMS (Learning Management System), CBTS, Animated Tutorials, Online Classes, Academic Coordination for students & educational organizations",
   },
@@ -63,7 +63,7 @@ const Banner2 = () => {
   pauseDuration={1500}
   showCursor={true}
   cursorCharacter="|"
-  className=""
+  className="font-bold leading-tight drop-shadow-lg"
 />
               </motion.h1>
               {/* <motion.p

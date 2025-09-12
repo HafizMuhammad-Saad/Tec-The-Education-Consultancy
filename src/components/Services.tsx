@@ -4,7 +4,7 @@
 import { Link } from "react-router-dom";
 import wave2 from "../assets/wave2.gif";
 import { motion } from "framer-motion";
-
+  
 // import TiltedCard from "../TiltedCard";
 export interface SERVICE {
   title: string;
@@ -21,7 +21,7 @@ const ServiceData: SERVICE[] = [
     link: "/",
     description: "Used for observations, capturing stunning images of the universe.",
     // icon: <FaRocket />,
-    image: "https://tec.edu.pk/pk/wp-content/uploads/2025/02/tecbrowser3.png",
+    image: "/src/assets/browser.gif",
     aosDelay: "300",
   },
   {
@@ -29,7 +29,7 @@ const ServiceData: SERVICE[] = [
     link: "35,786km",
     description: "Orbits Earth to provide constant communication and weather monitoring.",
     // icon: <MdSatellite />,
-        image: "https://tec.edu.pk/pk/wp-content/uploads/2025/02/lms1.png",
+        image: "/src/assets/AnimatedDashboards.gif",
 
     aosDelay: "400",
   },
@@ -38,7 +38,7 @@ const ServiceData: SERVICE[] = [
     link: "20,200km",
     description: "Enables GPS technology for accurate positioning and navigation worldwide.",
 
-    image: "https://tec.edu.pk/pk/wp-content/uploads/2025/02/Computer-Based-Testing2.png",
+    image: "/src/assets/dashboard.gif",
     // icon: <FaGlobe />,
     aosDelay: "500",
   },
@@ -46,7 +46,7 @@ const ServiceData: SERVICE[] = [
     title: "School Management System",
     link: "8,000-36,000km",
 
-    image: "https://tec.edu.pk/pk/wp-content/uploads/2025/02/sms2.png",
+    image: "/src/assets/Educatin.gif",
     description: "Facilitates television, internet, and radio broadcasting across the globe.",
     // icon: <FaBroadcastTower />,
     aosDelay: "600",
@@ -55,7 +55,7 @@ const ServiceData: SERVICE[] = [
     title: "Publications",
     link: "384,400km",
 
-    image: "https://tec.edu.pk/pk/wp-content/uploads/2025/02/pub.png",
+    image: "/src/assets/publications.gif",
     description: "Monitors the lunar surface and assists with space exploration efforts.",
     // icon: <FaRegMoon />,
     aosDelay: "700",
@@ -144,14 +144,35 @@ const Services = () => {
     <div className="pt-4 pb-10 p-8 text-white bg-black relative z-50">
       <div className="min-h-[400px]">
         <motion.h2
-                  initial={{ opacity: 0, y: -40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, ease: "easeOut" }}
-                  viewport={{ once: true }}
-                  className="text-3xl md:text-4xl font-bold text-center mb-12"
-                >
-                  Our <span className="text-blue-400">Services</span>
-                </motion.h2>
+  initial={{ opacity: 0, y: -40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.7, ease: "easeOut" }}
+  viewport={{ once: true }}
+  style={{
+    fontSize: '2.5rem', // Adjust if needed for responsiveness
+    fontWeight: 800,
+    textAlign: 'center',
+    marginBottom: '3rem',
+    color: '#ccc',
+    textShadow: `
+      1px 1px 0 #999,
+      2px 2px 1px #666,
+      3px 3px 2px #333
+    `
+  }}
+>
+  <span
+    style={{
+      background: 'linear-gradient(135deg, #d9d9d9, #aaaaaa, #f1f1f1, #888888)',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      display: 'inline-block'
+    }}
+  >
+    Our Services
+  </span>
+</motion.h2>
+
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-7 relative mt-10 z-10"
           variants={containerVariants}
@@ -173,7 +194,7 @@ const Services = () => {
     <img
       src={services.image}
       alt={services.title}
-      className="w-40 h-40 md:w-52 md:h-52 object-contain"
+      className="w-52 h-52 md:w-52 md:h-52 object-contain"
     />
 
     <h1 className="text-lg md:text-xl font-semibold text-center">

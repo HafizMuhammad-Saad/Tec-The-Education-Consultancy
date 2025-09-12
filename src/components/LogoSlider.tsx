@@ -71,7 +71,7 @@ export default function LogoSlider() {
                             <img
                                 src={logo}
                                 alt={`logo-${i}`}
-                                className="max-h-full max-w-full object-contain grayscale hover:grayscale-0 transition-all duration-500"
+                                className="max-h-full max-w-full object-contain transition-all duration-500"
                             />
                         </div>
 

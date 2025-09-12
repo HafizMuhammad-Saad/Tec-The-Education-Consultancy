@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@lottiefiles/dotlottie-react": "^0.16.1",
     "aos": "^2.3.4",
     "gsap": "^3.13.0",
     "motion": "^11.12.0",

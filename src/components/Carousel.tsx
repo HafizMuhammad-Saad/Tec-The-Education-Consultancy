@@ -130,18 +130,58 @@ const target = { opacity: 1, scale: 1, rotate: 0, rotateY: 0, x: 0, y: 0 };
   return (
     <section
       id="gallery"
-      className="relative w-full py-16 bg-black flex items-center justify-center overflow-hidden"
+      className="relative w-full py-16 bg-black flex items-center justify-center overflow-hidden" 
     >
       <div className="w-[90%] md:w-[80%] overflow-hidden relative">
         <motion.h2
-          initial={{ opacity: 0, y: -40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold text-center text-white mb-12"
-        >
-          Tec <span className="text-blue-400">Gallery</span>
-        </motion.h2>
+  initial={{ opacity: 0, y: -40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.7, ease: "easeOut" }}
+  viewport={{ once: true }}
+  style={{
+    // position: 'relative',
+    fontSize: '2.5rem',
+    fontWeight: 800,
+    textAlign: 'center',
+    marginBottom: '3rem',
+    // fontFamily: `'Playfair Display', serif`,
+    textTransform: 'uppercase',
+    background: 'linear-gradient(to bottom, #e0e0e0 0%, #b0b0b0 35%, #a0a0a0 50%, #dcdcdc 70%, #8a8a8a 100%)',
+    backgroundPosition: '0 1vw',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    color: '#fff',
+    // display: 'inline-block',
+  }}
+>
+  Our Gallery
+  <span
+    aria-hidden="true"
+    style={{
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      zIndex: -1,
+      display: 'block',
+      color: '#b3b3b3',
+      textShadow: `
+        -1px 0 1px #b3b3b3,
+        0 1px 1px #b3b3b3,
+        5px 5px 10px rgba(0, 0, 0, 0.4),
+        -5px -5px 10px rgba(0, 0, 0, 0.4)
+      `,
+      fontSize: '2.5rem',
+      fontWeight: 400,
+      fontFamily: `'Playfair Display', serif`,
+      textTransform: 'uppercase',
+      pointerEvents: 'none',
+    }}
+  >
+    Our Gallery
+  </span>
+</motion.h2>
+
+
        
             {/* <div className="slider-container">
                 <Slider {...settings}>
@@ -162,7 +202,7 @@ const target = { opacity: 1, scale: 1, rotate: 0, rotateY: 0, x: 0, y: 0 };
         </div> */}
 
 
-    <div className="relative w-full h-[500px] overflow-hidden">
+    <div className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[500px] overflow-hidden">
       <AnimatePresence mode="wait">
         <motion.img
           key={index}
@@ -171,7 +211,7 @@ const target = { opacity: 1, scale: 1, rotate: 0, rotateY: 0, x: 0, y: 0 };
           animate={target}
           exit={variants[effect]}
           transition={{ duration: 1 }}
-          className="absolute w-full h-auto object-contain rounded-lg shadow-lg"
+          className="absolute w-full h-full inset-0 object-contain md:object-cover rounded-lg shadow-lg"
         />
       </AnimatePresence>
     </div>

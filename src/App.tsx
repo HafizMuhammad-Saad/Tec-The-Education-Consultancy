@@ -52,10 +52,9 @@ function App() {
         <TopNav />
         <Navbar />    
         <Hero />
-        <Services />
-       <LogoSlider />
         <Banner />
         <Banner2 />
+        <Services />
         <div className="w-full bg-black">
   <img 
     src="/src/assets/map.jpg" 
@@ -64,6 +63,7 @@ function App() {
   />
 </div>
         <NewsEvents />
+       <LogoSlider />
         <Carousel />
         <Footer />
       </div>
