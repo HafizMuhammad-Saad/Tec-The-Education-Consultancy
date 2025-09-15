@@ -2,22 +2,25 @@ import { motion } from "framer-motion";
 
 const newsData = [
   {
-    date: "Sep 10, 2025",
-    title: "Admissions Open for Fall 2025",
+    date: "Jan 10, 2025",
+    title: "Global Education Summit 2025",
     description:
-      "We are excited to announce that admissions for Fall 2025 are now open. Apply early to secure your spot!",
+      "TEC participated in the Global Summit where we showcased our innovative solutions for digital learning.",
+    image: "https://tec.edu.pk/pk/wp-content/uploads/2025/02/feature3.png",
   },
   {
-    date: "Aug 20, 2025",
-    title: "Annual Teachers' Workshop",
+    date: "Feb 05, 2025",
+    title: "Launch of Tec Browser 2.0",
     description:
-      "A successful workshop was conducted for teachers focusing on modern learning methods and technology.",
+      "Our interactive teaching platform Tec Browser 2.0 was officially launched with new AI-powered features.",
+    image: "https://tec.edu.pk/pk/wp-content/uploads/2025/02/events2.png",
   },
   {
-    date: "July 15, 2025",
-    title: "New Satellite Learning Center Launched",
+    date: "Mar 01, 2025",
+    title: "Partnership with Global Schools",
     description:
-      "Tec inaugurated a new learning center equipped with modern facilities for enhanced student experiences.",
+      "TEC signed a collaboration agreement with international schools to enhance e-learning opportunities.",
+    image: "https://tec.edu.pk/pk/wp-content/uploads/2025/02/events3.png",
   },
 ];
 
@@ -25,7 +28,7 @@ const NewsEvents = () => {
   return (
     <section
       id="news"
-      className="relative w-full py-20 bg-gradient-to-r from-gray-900 via-black to-gray-900 text-white"
+      className="relative w-full py-20 bg-gradient-to-br from-black via-slate-900 to-black text-white"
     >
       <div className="container mx-auto px-6 lg:px-20">
         {/* Heading */}
@@ -59,9 +62,8 @@ const NewsEvents = () => {
   </span>
 </motion.h2>
 
-
         {/* Grid of Cards */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           {newsData.map((item, i) => (
             <motion.div
               key={i}
@@ -73,24 +75,37 @@ const NewsEvents = () => {
                 ease: "easeOut",
               }}
               viewport={{ once: true }}
-              className="bg-gray-800/60 backdrop-blur-md p-6 rounded-xl shadow-lg border border-gray-700 hover:border-blue-500 transition group"
+              whileHover={{ scale: 1.03, y: -5 }}
+              className="relative bg-gray-900/70 backdrop-blur-xl rounded-xl overflow-hidden shadow-lg 
+                         border border-gray-700 hover:border-cyan-400 
+                         transition-all duration-500 group"
             >
-              {/* Date */}
-              <p className="text-sm text-blue-400 font-semibold mb-2">
-                {item.date}
-              </p>
-              {/* Title */}
-              <h3 className="text-xl font-semibold group-hover:text-blue-400 transition">
-                {item.title}
-              </h3>
-              {/* Description */}
-              <p className="text-gray-300 mt-3 text-sm leading-relaxed">
-                {item.description}
-              </p>
-              {/* Read More */}
-              <button className="mt-5 text-blue-400 font-medium hover:underline">
-                Read More →
-              </button>
+              {/* Image */}
+              <div className="h-48 overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                <p className="text-sm text-cyan-400 font-semibold mb-2">
+                  {item.date}
+                </p>
+                <h3 className="text-xl font-bold mb-3 group-hover:text-cyan-400 transition">
+                  {item.title}
+                </h3>
+                <p className="text-gray-300 text-sm leading-relaxed mb-5">
+                  {item.description}
+                </p>
+                <button className="px-4 py-2 text-sm font-medium rounded-md 
+                                   bg-gradient-to-r from-cyan-500 to-blue-600 
+                                   text-black hover:shadow-[0_0_15px_#22d3ee] transition">
+                  Read More →
+                </button>
+              </div>
             </motion.div>
           ))}
         </div>

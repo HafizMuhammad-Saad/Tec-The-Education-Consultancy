@@ -146,7 +146,7 @@ const Contact = () => {
           >
             <FaPhoneAlt className="text-cyan-400 text-4xl mb-4 mx-auto" />
             <h3 className="text-xl font-semibold">Phone</h3>
-            <p className="text-gray-400 mt-2">+92-xxx-xxxxxxx</p>
+            <p className="text-gray-400 mt-2">021-36681927</p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -168,7 +168,7 @@ const Contact = () => {
           >
             <FaMapMarkerAlt className="text-cyan-400 text-4xl mb-4 mx-auto" />
             <h3 className="text-xl font-semibold">Location</h3>
-            <p className="text-gray-400 mt-2">Quetta, Pakistan</p>
+            <p className="text-gray-400 mt-2">Karachi, Pakistan</p>
           </motion.div>
         </div>
 
