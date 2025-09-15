@@ -8,19 +8,10 @@ const Hero = () => {
           {/* Right Column (optional image/graphic) */}
           <div className="hidden md:flex items-center justify-center">
             {/* Placeholder for illustration or animation */}
-            {/* <img src="/src/assets/maintenance cyber security.gif" alt="" className="rounded-3xl text-9xl"/> */}
           </div>
           {/* Left Content */}
            <div className="flex flex-col items-start justify-center ml-5 md:ml-10 bg-black/30 p-5 rounded-lg md:bg-transparent md:p-0">
-          {/*  <motion.h1
-              initial={{ opacity: 0, y: -100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.8, ease: [0, 0.71, 0.2, 1.01] }}
-              className="text-4xl md:text-6xl font-bold leading-tight drop-shadow-lg"
-            >
-              Exploring Beyond Horizons
-            </motion.h1> */}
+          
             <TextType 
   text={["Tec - The Eduction Consultancy", "for your children", "Develope Your Child!"]}
   typingSpeed={75}

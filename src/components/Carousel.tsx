@@ -139,42 +139,24 @@ const target = { opacity: 1, scale: 1, rotate: 0, rotateY: 0, x: 0, y: 0 };
   transition={{ duration: 0.7, ease: "easeOut" }}
   viewport={{ once: true }}
   style={{
-    // position: 'relative',
-    fontSize: '2.5rem',
+    fontSize: '2.5rem', // Adjust if needed for responsiveness
     fontWeight: 800,
     textAlign: 'center',
     marginBottom: '3rem',
-    // fontFamily: `'Playfair Display', serif`,
-    textTransform: 'uppercase',
-    background: 'linear-gradient(to bottom, #e0e0e0 0%, #b0b0b0 35%, #a0a0a0 50%, #dcdcdc 70%, #8a8a8a 100%)',
-    backgroundPosition: '0 1vw',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    color: '#fff',
-    // display: 'inline-block',
+    color: '#ccc',
+    textShadow: `
+      1px 1px 0 #999,
+      2px 2px 1px #666,
+      3px 3px 2px #333
+    `
   }}
 >
-  Our Gallery
   <span
-    aria-hidden="true"
     style={{
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      zIndex: -1,
-      display: 'block',
-      color: '#b3b3b3',
-      textShadow: `
-        -1px 0 1px #b3b3b3,
-        0 1px 1px #b3b3b3,
-        5px 5px 10px rgba(0, 0, 0, 0.4),
-        -5px -5px 10px rgba(0, 0, 0, 0.4)
-      `,
-      fontSize: '2.5rem',
-      fontWeight: 400,
-      fontFamily: `'Playfair Display', serif`,
-      textTransform: 'uppercase',
-      pointerEvents: 'none',
+      background: 'linear-gradient(135deg, #d9d9d9, #aaaaaa, #f1f1f1, #888888)',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      display: 'inline-block'
     }}
   >
     Our Gallery

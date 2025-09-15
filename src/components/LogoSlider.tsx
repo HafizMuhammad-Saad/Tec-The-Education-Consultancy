@@ -48,15 +48,35 @@ export default function LogoSlider() {
 
             {/* <div className="absolute bottom-0 w-full z-30 bg-gradient-to-b from-transparent to-black h-[80px] md:h-[100px]" /> */}
 
-            {/* <motion.h2
-                  initial={{ opacity: 0, y: -40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, ease: "easeOut" }}
-                  viewport={{ once: true }}
-                  className="text-3xl md:text-4xl font-bold text-center text-white mb-12"
-                >
-                  Our <span className="text-blue-400">Clients</span>
-                </motion.h2> */}
+            <motion.h2
+  initial={{ opacity: 0, y: -40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.7, ease: "easeOut" }}
+  viewport={{ once: true }}
+  style={{
+    fontSize: '2.5rem', // Adjust if needed for responsiveness
+    fontWeight: 800,
+    textAlign: 'center',
+    marginBottom: '3rem',
+    color: '#ccc',
+    textShadow: `
+      1px 1px 0 #999,
+      2px 2px 1px #666,
+      3px 3px 2px #333
+    `
+  }}
+>
+  <span
+    style={{
+      background: 'linear-gradient(135deg, #d9d9d9, #aaaaaa, #f1f1f1, #888888)',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      display: 'inline-block'
+    }}
+  >
+    Our Clients
+  </span>
+</motion.h2>
             <motion.div ref={containerRef} className="inline-flex gap-4" onMouseEnter={() => setPaused(true)}
                 onMouseLeave={() => setPaused(false)} style={{ x }}>
                 {loopedLogos.map((logo, i) => {
@@ -65,7 +85,7 @@ export default function LogoSlider() {
                         <div
                             key={i}
                             className="h-44 w-44 flex items-center justify-center 
-             bg-gray-100 border border-gray-200 rounded-xl shadow-sm 
+             bg-white border border-black rounded-xl shadow-sm 
              hover:shadow-lg transition-all duration-300 cursor-pointer"
                         >
                             <img

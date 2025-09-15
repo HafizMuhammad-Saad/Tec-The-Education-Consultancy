@@ -18,7 +18,7 @@ export interface SERVICE {
 const ServiceData: SERVICE[] = [
   {
     title: "Tec Browser",
-    link: "/",
+    link: "/tecbrowser",
     description: "Used for observations, capturing stunning images of the universe.",
     // icon: <FaRocket />,
     image: "/assets/browser.gif",
@@ -26,7 +26,7 @@ const ServiceData: SERVICE[] = [
   },
   {
     title: "Learning Management System",
-    link: "35,786km",
+    link: "/lmspage",
     description: "Orbits Earth to provide constant communication and weather monitoring.",
     // icon: <MdSatellite />,
         image: "/assets/AnimatedDashboards.gif",
@@ -35,7 +35,7 @@ const ServiceData: SERVICE[] = [
   },
   {
     title: "Computer Based Testing System",
-    link: "20,200km",
+    link: "/cbtpage",
     description: "Enables GPS technology for accurate positioning and navigation worldwide.",
 
     image: "/assets/dashboard.gif",
@@ -44,7 +44,7 @@ const ServiceData: SERVICE[] = [
   },
   {
     title: "School Management System",
-    link: "8,000-36,000km",
+    link: "/smspage",
 
     image: "/assets/Educatin.gif",
     description: "Facilitates television, internet, and radio broadcasting across the globe.",
@@ -53,7 +53,7 @@ const ServiceData: SERVICE[] = [
   },
   {
     title: "Publications",
-    link: "384,400km",
+    link: "/publications",
 
     image: "/assets/publications.gif",
     description: "Monitors the lunar surface and assists with space exploration efforts.",
@@ -174,7 +174,7 @@ const Services = () => {
 </motion.h2>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-7 relative mt-10 z-10"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-7 relative mt-10 z-10"
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
