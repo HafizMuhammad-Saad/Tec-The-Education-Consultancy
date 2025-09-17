@@ -14,6 +14,7 @@ import Video from "../components/Video";
 import NewsEvents from "../components/NewsEvents";
 import LogoSlider from "../components/LogoSlider";
 
+
 import mapImage from "../assets/map.jpg";
 function Home() {
 
@@ -34,7 +35,9 @@ function Home() {
   }, []);
   
   if (loading) {
-    return <Preloader />; 
+    return <>
+    <Preloader />
+    </>; 
   }
 
   return (

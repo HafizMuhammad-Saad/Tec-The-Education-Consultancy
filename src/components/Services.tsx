@@ -4,6 +4,7 @@
 import { Link } from "react-router-dom";
 import wave2 from "../assets/wave2.gif";
 import { motion } from "framer-motion";
+import FlipCard from "./FlipCard";
   
 // import TiltedCard from "../TiltedCard";
 export interface SERVICE {
@@ -12,7 +13,9 @@ export interface SERVICE {
   description: string;
   // icon: JSX.Element;
   aosDelay: string;
-  image?: string;
+  image: string;
+
+
 }
 
 const ServiceData: SERVICE[] = [
@@ -46,7 +49,7 @@ const ServiceData: SERVICE[] = [
     title: "School Management System",
     link: "/smspage",
 
-    image: "/assets/Educatin.gif",
+    image: "/assets/Marketinganalytics.gif",
     description: "Facilitates television, internet, and radio broadcasting across the globe.",
     // icon: <FaBroadcastTower />,
     aosDelay: "600",
@@ -73,73 +76,14 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 50 },
-  show: { opacity: 1, y: 0 },
-};
-
-// import ChromaGrid from '../../reactBits/ChromaGrid/ChromaGrid'
-
-// const items = [
-//   {
-//     image: "https://tec.edu.pk/pk/wp-content/uploads/2025/02/pub.png",
-//     title: "Sarah Johnson",
-//     subtitle: "Frontend Developer",
-//     handle: "@sarahjohnson",
-//     borderColor: "#3B82F6",
-//     gradient: "linear-gradient(145deg, #3B82F6, #000)",
-//     url: "https://github.com/sarahjohnson"
-//   },
-//   {
-//     image: "https://tec.edu.pk/pk/wp-content/uploads/2025/02/sms2.png",
-//     title: "Mike Chen",
-//     subtitle: "Backend Engineer",
-//     handle: "@mikechen",
-//     borderColor: "#10B981",
-//     gradient: "linear-gradient(180deg, #10B981, #000)",
-//     url: "https://linkedin.com/in/mikechen"
-//   },
-//   {
-//     image: "https://tec.edu.pk/pk/wp-content/uploads/2025/02/Computer-Based-Testing2.png",
-//     title: "Sarah Johnson",
-//     subtitle: "Frontend Developer",
-//     handle: "@sarahjohnson",
-//     borderColor: "#3B82F6",
-//     gradient: "linear-gradient(145deg, #3B82F6, #000)",
-//     url: "https://github.com/sarahjohnson"
-//   },
-//   {
-//     image: "https://tec.edu.pk/pk/wp-content/uploads/2025/02/lms1.png",
-//     title: "Mike Chen",
-//     subtitle: "Backend Engineer",
-//     handle: "@mikechen",
-//     borderColor: "#10B981",
-//     gradient: "linear-gradient(180deg, #10B981, #000)",
-//     url: "https://linkedin.com/in/mikechen"
-//   },
-//   {
-//     image: "https://i.pravatar.cc/300?img=1",
-//     title: "Sarah Johnson",
-//     subtitle: "Frontend Developer",
-//     handle: "@sarahjohnson",
-//     borderColor: "#3B82F6",
-//     gradient: "linear-gradient(145deg, #3B82F6, #000)",
-//     url: "https://github.com/sarahjohnson"
-//   },
-//   {
-//     image: "https://i.pravatar.cc/300?img=2",
-//     title: "Mike Chen",
-//     subtitle: "Backend Engineer",
-//     handle: "@mikechen",
-//     borderColor: "#10B981",
-//     gradient: "linear-gradient(180deg, #10B981, #000)",
-//     url: "https://linkedin.com/in/mikechen"
-//   },
-
-// ];
+// const itemVariants = {
+//   hidden: { opacity: 0, y: 50 },
+//   show: { opacity: 1, y: 0 },
+// };
 
 
 const Services = () => {
+
   return (
     <div className="pt-4 pb-10 p-8 text-white bg-black relative z-50">
       <div className="min-h-[400px]">
@@ -181,41 +125,19 @@ const Services = () => {
           viewport={{ once: true, amount: 0.3 }}
         >
           {ServiceData.map((services, index) => (
-           <motion.div
-  key={index}
-  variants={itemVariants}
-  className="flex flex-col items-center gap-4 bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#0f172a] p-6 rounded-md w-full hover:shadow-lg hover:shadow-sky-500/20 transition duration-300"
->
+            <Link to={services.link} key={index} target="_blank" rel="noopener noreferrer">
+              <FlipCard
+       image={services.image}
+       title={services.title}
+       description={services.description}
+     />
 
-  <Link
-    to={services.link}
-    className="flex flex-col items-center gap-4 hover:scale-105 transition-transform duration-300 w-full"
-  >
-    <img
-      src={services.image}
-      alt={services.title}
-      className="w-52 h-52 md:w-52 md:h-52 object-contain"
-    />
+            </Link>
 
-    <h1 className="text-lg md:text-xl font-semibold text-center">
-      {services.title}
-    </h1>
-
-    
-  </Link>
-</motion.div>
 
           ))}
 
-          {/* <div style={{ height: '800px', position: 'relative' }}>
-  <ChromaGrid 
-    items={items}
-    radius={300}
-    damping={0.45}
-    fadeOut={0.6}
-    ease="power3.out"
-  />
-</div> */}
+          
         </motion.div>
 
         <img

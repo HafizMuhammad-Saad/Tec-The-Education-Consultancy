@@ -12,23 +12,27 @@ const Navbar = () => {
   const menuItems = [
     { label: "About Us", href: "/about" },
     { label: "Our Journey", href: "/ourjourney" },
-    { label: "Gallery", href: "/gallery" },
+    // { label: "Gallery", href: "/gallery" },
     { label: "Our Services", href: "/services" },
     { label: "Contact Us", href: "/contact" },
     { label: "Publications", href: "/publications" },
   ];
 
+
    return (
-    <motion.nav
+    <>
+      <motion.nav
       initial={{ opacity: 0, y: -80 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.8, 0.25, 1] }}
         className="absolute top-10 left-0 w-full z-50 flex items-center justify-between
-            bg-gradient-to-r from-[#ffffffa1] via-[#1e293b] to-[#0f172a]
-             backdrop-blur-xl py-2 md:py-4 px-6 md:px-20 rounded-lg shadow-lg"
+bg-[#800000]
+             backdrop-blur-xl py-2 md:py-4 px-4 sm:px-6 md:px-10 lg:px-20 rounded-lg shadow-lg md:overflow-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent"
     >
       {/* Logo */}
-      <div className="flex items-center cursor-pointer">
+      <div className="flex flex-shrink-0 items-center bg-gradient-to-br from-white via-gray-200 to-gray-300
+
+ rounded-full px-10 py-2 cursor-pointer shadow-md">
         <Link to="/">
 
         <img src={logo} alt="TEC Logo" className="w-36 drop-shadow-lg filter brightness-100" />
@@ -36,7 +40,7 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Menu */}
-      <div className="hidden md:flex text-gray-200 font-medium text-lg tracking-wide">
+      <div className="hidden md:flex flex-1 justify-center text-gray-200 font-medium text-lg tracking-wide">
         <ul className="flex gap-x-3 lg:gap-x-10">
           {menuItems.map((item) => (
             <li
@@ -45,11 +49,13 @@ const Navbar = () => {
             >
 <motion.a
   href={item.href}
-  className="relative px-4 py-2 rounded-md border border-transparent transition-all duration-300"
+  target="_blank"
+  className="relative whitespace-nowrap px-2 md:px-3 lg:px-4 py-2 rounded-md border border-transparent transition-all duration-500 ease-in-out"
   whileHover={{
     borderColor: "#22d3ee",
     boxShadow: "0px 0px 8px rgba(34,211,238,0.7)",
     color: "#22d3ee",
+
   }}
 >
   {item.label}
@@ -64,7 +70,7 @@ const Navbar = () => {
       </div>
 
       {/* CTA Button */}
-      <div className="hidden md:flex items-center">
+      <div className="hidden md:flex ml-2 items-center">
         <button className="relative px-6 py-2 font-semibold text-gray-100 rounded-md border-2 border-cyan-400 
                            overflow-hidden transition-all duration-300 hover:text-black group">
           <span className="absolute inset-0 bg-cyan-400 translate-y-[150%] group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
@@ -109,6 +115,7 @@ const Navbar = () => {
         </motion.div>
       )}
     </motion.nav>
+      </>
   );
 };
 

@@ -4,7 +4,7 @@ import './index.css'
 import Home from './pages/Home.tsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import About from './pages/About.tsx'
-import OurNetwork from './pages/OurNetwork.tsx'
+import OurJourney from './pages/OurJourney.tsx'
 import Gallery from './pages/Gallery.tsx'
 import Contact from './pages/Contact.tsx'
 import OurServices from './pages/OurServices.tsx'
@@ -22,7 +22,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Home />} />
         <Route path="/about" element={<><TopNav/><Navbar /><About /></>} />
-        <Route path="/ourjourney" element={<><TopNav/><Navbar /><OurNetwork /></>} />
+        <Route path="/ourjourney" element={<><TopNav/><Navbar /><OurJourney /></>} />
         <Route path="/gallery" element={<><TopNav/><Navbar /><Gallery /></>} />
         <Route path="/contact" element={<><TopNav/><Navbar /><Contact /></>} />
         <Route path="/services" element={<><TopNav/><Navbar /><OurServices /></>} />
