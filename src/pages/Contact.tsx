@@ -63,7 +63,7 @@ const ContactUs = () => {
             style={{ color: link.color }}
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: index * 0.25 + 0.8, duration: 0.6 }}
+            transition={{ delay: index * 0.015, duration: 0.6 }}
             whileHover={{ scale: 1.25 }}
             whileTap={{ scale: 0.9 }}
           >

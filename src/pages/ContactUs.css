@@ -12,7 +12,7 @@
 .hero {
   position: relative;
   width: 100%;
-  height: 70vh;
+  height: 85vh;
   min-height: 500px;
   overflow: hidden;
   padding-top: 120px;
@@ -91,7 +91,7 @@
 
 .social-icon {
   font-size: 2.2rem;
-  transition: transform 0.3s ease;
+  /* transition: transform 0.3s ease; */
 }
 
 /* Mobile Tweaks */
