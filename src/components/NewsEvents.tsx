@@ -10,7 +10,7 @@ const newsData = [
   },
   {
     date: "Feb 05, 2025",
-    title: "Launch of Tec Browser 2.0",
+    title: "Launch of Tec Browser 7.0",
     description:
       "Our interactive teaching platform Tec Browser 2.0 was officially launched with new AI-powered features.",
     image: "https://tec.edu.pk/pk/wp-content/uploads/2025/02/events2.png",

@@ -28,7 +28,7 @@ const PublicationsPage = () => {
           viewport={{ once: true }}
           className="text-5xl font-extrabold text-center mb-6"
         >
-          TEC <span className="text-cyan-400">Publications</span>
+          <span className="font-TimesNewRoman">Tec </span> <span className="text-cyan-400">Publications</span>
         </motion.h1>
         
         {/* Subtitle */}

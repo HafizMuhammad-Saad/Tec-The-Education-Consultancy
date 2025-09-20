@@ -32,10 +32,10 @@ bg-[#800000]
       {/* Logo */}
       <div className="flex flex-shrink-0 items-center bg-gradient-to-br from-white via-gray-200 to-gray-300
 
- rounded-full px-10 py-2 cursor-pointer shadow-md">
+ rounded-full px-5 py-1 md:px-10 md:py-2 cursor-pointer shadow-md">
         <Link to="/">
 
-        <img src={logo} alt="TEC Logo" className="w-36 drop-shadow-lg filter brightness-100" />
+        <img src={logo} alt="TEC Logo" className="w-24 md:36 drop-shadow-lg filter brightness-100" />
         </Link>
       </div>
 

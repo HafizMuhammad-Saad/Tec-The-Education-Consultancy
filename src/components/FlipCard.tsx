@@ -3,7 +3,7 @@ import { useState } from "react";
 
 type FlipCardProps = {
   image: string;
-  title: string;
+  title: string | JSX.Element;
   description?: string;
     onClick?: () => void;
 };
@@ -31,7 +31,7 @@ const faceStyle: React.CSSProperties = {
 
 const frontStyle: React.CSSProperties = {
   ...faceStyle,
-  background: "linear-gradient(to right, #0f172a, #1e293b, #0f172a)",
+  // background: "linear-gradient(to right, #0f172a, #1e293b, #0f172a)",
   color: "white",
   display: "flex",
   flexDirection: "column",
@@ -69,10 +69,11 @@ const FlipCard: React.FC<FlipCardProps> = ({ image, title, description, onClick 
     >
       <div style={innerStyle(flipped)}>
         {/* Front */}
-        <div style={frontStyle}>
+        <div style={frontStyle} className="bg-gradient-to-br from-[#b91f24] via-rose-600 to-[#ff0000]
+">
           <img
             src={image}
-            alt={title}
+            alt={typeof title === "string" ? title : ""}
             style={{ width: "260px", height: "260px", objectFit: "contain" }}
           />
           <h1 style={{ fontSize: "1.25rem", fontWeight: "600", marginTop: "0.75rem", textAlign: "center" }}>

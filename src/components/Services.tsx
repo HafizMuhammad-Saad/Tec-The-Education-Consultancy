@@ -8,7 +8,7 @@ import FlipCard from "./FlipCard";
   
 // import TiltedCard from "../TiltedCard";
 export interface SERVICE {
-  title: string;
+  title: JSX.Element | string;
   link: string;
   description: string;
   // icon: JSX.Element;
@@ -20,7 +20,11 @@ export interface SERVICE {
 
 const ServiceData: SERVICE[] = [
   {
-    title: "Tec Browser",
+    title: (
+      <>
+        <span className="font-TimesNewRoman">Tec</span> Browser
+      </>
+    ),
     link: "/tecbrowser",
     description: "Used for observations, capturing stunning images of the universe.",
     // icon: <FaRocket />,

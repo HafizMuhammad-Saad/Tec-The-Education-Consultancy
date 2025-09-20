@@ -31,7 +31,7 @@ const About = () => {
           />
           <motion.div variants={fadeInUp} custom={2}>
             <h2 className="text-5xl font-extrabold mb-6 leading-snug">
-              Welcome to <span className="text-cyan-400">TEC</span>
+              Welcome to <span className="text-cyan-400 font-TimesNewRoman">Tec</span>
             </h2>
             <p className="leading-relaxed text-lg text-gray-300">
               Tec is a dynamic resource center and educational support

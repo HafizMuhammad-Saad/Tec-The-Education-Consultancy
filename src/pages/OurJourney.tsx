@@ -1,149 +1,146 @@
-import { motion } from "framer-motion";
-import {
-  FaRocket,
-  FaGraduationCap,
-  FaLaptopCode,
-  FaBook,
-  FaRobot,
-} from "react-icons/fa";
+import React from 'react'
+import { motion } from 'framer-motion'
+import { FaAddressCard, FaAndroid,  FaBroadcastTower, FaGlobe, FaGraduationCap, FaLaptop, FaPen, FaRobot } from 'react-icons/fa'
+import './OurJourney.css'
 
-// Timeline data
-const journey = [
+  const data = [
   {
-    year: "2012",
-    title: "TEC Browser",
-    desc: "Launch of our first learning browser tailored for education.",
-    icon: <FaRocket className="text-cyan-400 text-4xl" />,
+    year: 2012,
+    title: ' Browser',
+    event: "Launched our first education-focused browser, built to support safe and guided learning.",
+    icon: <FaGlobe />
   },
   {
-    year: "2014",
-    title: "Learning Management System",
-    desc: "Introduction of LMS for online classes, courses, and e-learning support.",
-    icon: <FaGraduationCap className="text-cyan-400 text-4xl" />,
+    year: 2014,
+    title: 'LMS',
+    event: "Introduced the Learning Management System for online classes, courses, and e-learning.",
+    icon: <FaGraduationCap />
   },
   {
-    year: "2016",
-    title: "School Management System (SMS)",
-    desc: "Developed SMS to manage schools, teachers, and student records.",
-    icon: <FaLaptopCode className="text-cyan-400 text-4xl" />,
+    year: 2016,
+    title: 'CBT',
+    event: "Rolled out the Computer Based Testing System, enabling secure and modern digital exams.",
+    icon: <FaLaptop />
   },
   {
-    year: "2020",
-    title: "Customized Content",
-    desc: "Launched personalized learning resources & publications.",
-    icon: <FaBook className="text-cyan-400 text-4xl" />,
+    year: 2020,
+    title: 'SMS',
+    event: "Released the School Management System and upgraded our browser to manage learning tools.",
+    icon: <FaBroadcastTower />
   },
   {
-    year: "2023",
-    title: "CBTS - Computer Based Testing System",
-    desc: "Digital assessment tools for teachers and students.",
-    icon: <FaGraduationCap className="text-cyan-400 text-4xl" />,
+    year: 2021,
+    title: 'Digital App',
+    event: "Released the School Management System and upgraded our browser to manage learning tools.",
+    icon: <FaAndroid />
   },
   {
-    year: "2024",
-    title: "STEAM & Robotics",
-    desc: "Introducing hands-on robotics and STEAM education.",
-    icon: <FaRobot className="text-cyan-400 text-4xl" />,
+    year: 2024,
+    title: 'Robotics',
+    event: "Began offering engaging STEAM and Robotics programs, giving students hands-on learning.",
+    icon: <FaRobot />
   },
   {
-    year: "2025",
-    title: "E-Academy & Core Academics",
-    desc: "Comprehensive online academy and core academics expansion.",
-    icon: <FaGraduationCap className="text-cyan-400 text-4xl" />,
+    year: 2023,
+    title: 'Publishers',
+    event: "Published our first collection of digital materials and apps to empower active learners.",
+    icon: <FaPen />
   },
-];
+  {
+    year: 2025,
+    title: 'E-Academy',
+    event: "Published our first collection of digital materials and apps to empower active learners.",
+    icon: <FaAddressCard />
+  },
+]
+
+
+
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.4, // delay between each item
+      delayChildren: 0.3,   // first item delay
+    },
+  },
+}
+
+const item = {
+  hidden: { opacity: 0, y: 60, scale: 0.8 },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.1, 0.25, 1], // cubic-bezier easing for smoothness
+    },
+  },
+}
+const gradients = [
+  { start: "#800000", end: "#ff6b6b" }, // red shades
+  { start: "#3b82f6", end: "#06b6d4" }, // blue-cyan
+  { start: "#16a34a", end: "#4ade80" }, // green shades
+  { start: "#9333ea", end: "#c084fc" }, // purple
+  { start: "#f59e0b", end: "#facc15" }, // amber-yellow
+  { start: "#db2777", end: "#f472b6" }, // pink
+]
 
 const OurJourney = () => {
   return (
-    <div className="pt-40 pb-20 bg-black text-gray-200 overflow-hidden">
-      <div className="container mx-auto px-6 md:px-16 lg:px-28">
-        {/* Heading */}
-        <motion.h1
+    <div className='journey-wrapper'>
+<motion.h1
           initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="text-5xl font-extrabold text-center mb-20"
+          className="text-5xl font-extrabold text-center mb-16 mt-12"
         >
-          Our <span className="text-cyan-400">Journey</span>
-        </motion.h1>
-
-        {/* Timeline wrapper */}
-        <div className="relative">
-          {/* Animated path */}
-          <svg
-            className="absolute left-1/2 transform -translate-x-1/2 w-[4px] h-full"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <motion.line
-              x1="2"
-              y1="0"
-              x2="2"
-              y2="100%"
-              stroke="#22d3ee"
-              strokeWidth="4"
-              initial={{ pathLength: 0 }}
-              whileInView={{ pathLength: 1 }}
-              transition={{ duration: 3, ease: "easeInOut" }}
-            />
-          </svg>
-
-          {/* Milestones */}
-          <div className="flex flex-col space-y-24">
-            {journey.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: i % 2 === 0 ? -100 : 100 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: i * 0.2, ease: "easeOut" }}
-                viewport={{ once: true }}
-                className={`relative flex items-center ${
-                  i % 2 === 0 ? "justify-start" : "justify-end"
-                }`}
+          Our <span className="text-[#b91f24] border-b-2 border-[#b91f24] border-dashed">Journey</span>
+        </motion.h1>      <motion.div
+        className="infographic text-gray-900"
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <div className="steps-container"></div>
+        {
+          data.map((itemData, index) => (
+            <motion.div
+              className="infographic-item"
+              key={index}
+              variants={item}
+              whileHover={{ scale: 1.05, y: -6 }}
+            >
+              <div
+                className="item-step"
+                style={{
+                   ['--color-start' as any]: gradients[index % gradients.length].start,
+    ['--color-end' as any]: gradients[index % gradients.length].end,
+                } as React.CSSProperties}
               >
-               
-<div
-  className={`relative max-w-md p-8 rounded-2xl
-              bg-gradient-to-br from-slate-900/70 to-slate-800/70
-              border border-cyan-400/30 backdrop-blur-xl
-              shadow-[0_0_20px_rgba(34,211,238,0.25)]
-              hover:shadow-[0_0_35px_rgba(34,211,238,0.6)]
-              transition-all duration-500 hover:scale-105
-              ${i % 2 === 0 ? "mr-20" : "ml-20"}`}
->
-  <span className="absolute -top-4 left-6 px-4 py-1 
-                   bg-cyan-400 text-black font-bold rounded-full 
-                   text-sm shadow-md">
-    {item.year}
-  </span>
+                <div className="item-step-body">
+                  <span className="item-step-label">
+                    {itemData.title}
+                  </span>
+                  <span className="item-step-icon">
+                    {itemData.icon}
+                  </span>
+                  <span className="item-year">{itemData.year}</span>
 
-  <h3 className="text-2xl font-semibold text-cyan-400 mb-2">
-    {item.title}
-  </h3>
-
-  <p className="mt-2 text-gray-300 leading-relaxed">
-    {item.desc}
-  </p>
-</div>
-
-
-                <span
-                  className={`absolute left-1/2 transform -translate-x-1/2 w-20 h-20 
-                              flex items-center justify-center rounded-full bg-slate-900 
-                              border-4 border-cyan-400 shadow-lg`}
-                >
-                  {item.icon}
-                </span>
-              </motion.div>
-            ))}
-          </div>
-
-          
-
-        </div>
-      </div>
+                </div>
+              </div>
+              <div className="item-text">
+                <p>{itemData.event}</p>
+              </div>
+            </motion.div>
+          ))
+        }
+      </motion.div>
     </div>
-  );
-};
+  )
+}
 
-export default OurJourney;
+export default OurJourney
